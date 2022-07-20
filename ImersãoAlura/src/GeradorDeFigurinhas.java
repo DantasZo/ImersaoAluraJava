@@ -1,25 +1,18 @@
+import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.InputStream;
-import java.net.URL;
-
 import javax.imageio.ImageIO;
-import javax.imageio.stream.ImageInputStream;
-import javax.swing.plaf.FontUIResource;
-
-import java.awt.Graphics2D;
-import java.awt.Font;
 
 public class GeradorDeFigurinhas {
 
-    public void cria() throws Exception {
+    public void cria(InputStream inputStream, String nomeArquivo) throws Exception {
         // leitura da imagem
-        InputStream InputStream = new FileInputStream(new File("entrada/filme.jpg"));
-        //InputStream inputStream = new URL("https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX128_CR0,3,128,176_AL_.jpg").openStream();
-        BufferedImage imagemOriginal = ImageIO.read(InputStream);
-
-
+        //InputStream InputStream = new FileInputStream(new File("entrada/filme.jpg"));
+        //InputStream inputStream = new URL("https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@s").openStream();
+        BufferedImage imagemOriginal = ImageIO.read(inputStream);
+      
         // criar uma nova imagem em memoria, com transparencia e redimensionada
         int largura = imagemOriginal.getWidth();
         int altura = imagemOriginal.getHeight();
@@ -38,12 +31,6 @@ public class GeradorDeFigurinhas {
         graphics.drawString("TOPZERA", 175, novaAltura - 125);
 
         // escrever a nova imagem em um arquivo
-        ImageIO.write(novaImagem, "png", new File("saida/figurinha.png"));
+        ImageIO.write(novaImagem, "png", new File(nomeArquivo));
     }
-
-    public static void main(String[] args) throws Exception {
-        var geradora = new GeradorDeFigurinhas();
-        geradora.cria();
-    }
-
 }
