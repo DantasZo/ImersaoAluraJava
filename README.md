@@ -1,5 +1,5 @@
 <p align="center">
-<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge"/>
+<img src="https://img.shields.io/badge/-Projeto%20Encerrado-red"/>
 </p>
 
   Repositório dedicado a imersão java da alura, todos conteudo e testes a qual eu realizar enquanto a imersão será atualizado e datado aqui, sinta-se a vontade para explorar e me contatar caso tenha duvidas ou encontre algum erro.
